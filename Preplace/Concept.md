@@ -3,7 +3,7 @@
 #### What is preplace?
 Don't need a bullshit explination: "pre" is a prefix meaning before => beforeplace; placing before an object is broken. Simple.
 
-This might look contradictory but its not, understanding [delta time](https://en.wikipedia.org/wiki/Delta_timing) and how [servers work](https://en.wikipedia.org/wiki/Game_server) is a pretty good starting place to look. But to sum it all up: Sync up the Client tick with the Server tick (1000/9) in a seperate time loop (newTick) to remove client latency.
+This might look contradictory but its not, understanding [delta time](https://en.wikipedia.org/wiki/Delta_timing) and how [servers work](https://en.wikipedia.org/wiki/Game_server) is a pretty good starting foundation to build. To sum it all up: Sync up the client (CL) with the the server (SR) seperate from newTick.
 
 #### Preplace vs Replace
 Whats the difference?
