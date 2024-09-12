@@ -7,31 +7,31 @@ To create the seperate loop, try to create a foundation that is stable everytime
 const TICK_INTERVAL = 1000 / 9;
 
 function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function handleTickUpdate() {
-  const currentTime = performance.now();
+	const currentTime = performance.now();
 
-  // PREPLACE:
+	// PREPLACE:
 }
 
 function tickLoop() {
-  const startTime = performance.now();
+  	const startTime = performance.now();
 
-  handleTickUpdate();
+  	handleTickUpdate();
 
-  const elapsedTime = performance.now() - startTime;
-  const remainingTime = Math.max(TICK_INTERVAL_MS - elapsedTime, 0);
+  	const elapsedTime = performance.now() - startTime;
+  	const remainingTime = Math.max(TICK_INTERVAL_MS - elapsedTime, 0);
 
-  delay(remainingTime).then(() => {
-    tickLoop(); // Call the loop again after the delay
-  });
+  	delay(remainingTime).then(() => {
+		tickLoop(); // Call the loop again after the delay
+  	});
 };
 
 // ON SPAWN:
 function spawnPlayer() {
-   tickLoop();
+	tickLoop();
 };
 
 ```
