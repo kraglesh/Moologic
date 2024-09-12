@@ -56,12 +56,17 @@ This creates a seperate loop through the use of `Promise`s and `performance.now(
 
 ```js
 /*
- * Assume basic variables
+ * Assume basic variables are global
  */
 function handleTickUpdate() {
-  const currentTime = performance.now();
+    const currentTime = performance.now();
 
-  // PREPLACE:
+    // PREPLACE:
+    for (let i = 0, building; i < buildings.length; i++) {
+        building = buildings[i];
+
+        if (building.health < 
+    };
   
 }
 ```
