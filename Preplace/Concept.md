@@ -10,3 +10,8 @@ Whats the difference?
 Replace is reactive, Preplace is proactive. Thats it.
 
 #### Common Misconceptions
+Putting your "preplace" in *NT*. This acomplishes nothing as receiving *NT* is depedent on your latency. 
+Furhter, using the "renderticks" (requestAnimFrame) to create a preplace. This method can be done, but:
+1. Timing Precision: `requestAnimFrame`, is not designed for tasks that need specific timing, and its not a precise/fixed interval
+2. Complexity in Sync-tion: Managing and synchornizing  `requestAnimFrame` With *NT* can become cumbersome.
+
