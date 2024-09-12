@@ -22,3 +22,9 @@ Furhter, using the "renderticks" (requestAnimFrame) to create a preplace. This m
 Preplace is a proactive replacement system designed to address the limitations of traditional reactive replacement methods. Unlike conventional approaches that wait for an object to break before initiating a replacement process, Preplace anticipates it. Preplace aims to minimize downtime and improve efficiency by ensuring that replacements are prepared and executed before the actual object is broken. 
 
 #### Psuedo
+
+To create the seperate loop, try to create a benchmark that is stable everytime, either creating the loop on spawn, on load, on connect etc. For this exmaple I will be doing it on spawn. 
+
+```js
+send: (data) {
+}```
