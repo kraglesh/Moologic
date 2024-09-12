@@ -66,4 +66,4 @@ function handleTickUpdate() {
 }
 ```
 
-Inside the handleTickUpdate is where we will put our preplace, this loop cna also be used for many other things. 
+Inside the `handleTickUpdate` is where we will put our preplace; This loop can also be used for many other things. 
