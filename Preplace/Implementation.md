@@ -1,7 +1,7 @@
 
 #### Seperate Loop Psuedo
 
-To create the seperate loop, try to create a benchmark that is stable everytime, either creating the loop on spawn, on load, on connect etc. For this exmaple I will be doing it on spawn. 
+To create the seperate loop, try to create a foundation that is stable everytime, either creating the loop on spawn, on load, on connect etc. For this exmaple I will be doing it on spawn. 
 
 ```js
 const TICK_INTERVAL = 1000 / 9;
