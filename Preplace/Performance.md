@@ -1,4 +1,4 @@
-It might appear that looping through all objects is performance-intensive, but that's not the case. Typically, there are fewer than 100 objects on screen, and processing them with a `for` loop is quite efficient. Additionally, implementing filtering to exclude offscreen objects further reduces the workload. Even if your are looping through all objects that are loaded, still algorithms aren't needed.
+Looping through fewer than 100 objects is generally not performance-intensive. A `for` loop handles such a small number efficiently, and filtering out offscreen objects further reduces the workload. Even when processing all loaded objects, performance remains manageable, and advanced algorithms are often unnecessary.
 
 ## With 100 Objects:
 <img width="1126" alt="image" src="https://github.com/user-attachments/assets/42bcfe59-501d-465e-a246-979183b7b92b">
@@ -7,3 +7,5 @@ It might appear that looping through all objects is performance-intensive, but t
 ## With 3000 Objects:
 <img width="1134" alt="image" src="https://github.com/user-attachments/assets/493d892c-0698-437d-9103-23cf594afbc6">
 
+## Interations that cause 1 millisecond delay
+<img width="1261" alt="image" src="https://github.com/user-attachments/assets/08bbf411-128d-4793-ad5f-d3b7420aa3d7">
