@@ -8,4 +8,5 @@ Looping through fewer than 100 objects is generally not performance-intensive. A
 
 ## Interations that cause 1 millisecond delay
 <img width="1261" alt="image" src="https://github.com/user-attachments/assets/08bbf411-128d-4793-ad5f-d3b7420aa3d7">
-### Note: calling functions inside decrease threashold. eg: calling replace() will slow down each interation, i.e, calling performance.now() each while loop iteration.
+### Note: 
+calling functions inside decrease threashold. eg: calling replace() will slow down each interation, i.e, calling performance.now() each while loop iteration.
