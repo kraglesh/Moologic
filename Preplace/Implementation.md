@@ -77,4 +77,8 @@ function handleTickUpdate() {
 }
 ```
 
+#### How this works
+
+Its really simple, if you can't read code just get off this page; bascsailly checks for all buildings, checks for their health and if they are breakable next tick, it queues an action to replace the object.
+
 Inside the `handleTickUpdate` is where we will put our preplace; This loop can also be used for many other things. 
