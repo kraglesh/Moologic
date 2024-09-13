@@ -82,4 +82,5 @@ function handleTickUpdate() {
 
 Its really simple, if you can't read code just get off this page. Bascsailly checks for all buildings, checks for their health and if they are breakable next tick, it queues an action to replace the object.
 
+`handleQueuedActions` queues all the actions that were queued for that specific tick using `queueNextTick`. Note that `queueNextTick` is specifically used for this timeloop, do not call your own `queueNextTick`.
 Inside the `handleTickUpdate` is where we will put our preplace; This loop can also be used for many other things. 
