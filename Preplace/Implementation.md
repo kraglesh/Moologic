@@ -71,6 +71,7 @@ function handleTickUpdate() {
         if (health <= maxPlayersDamage) { //Assume `maxPlayerDamage` is defined and inlcudes all player damage
             //^ Also assume that they hit this tick, replace next tick
             queueNextTick(() => { replace(building) }); //Assume replace & queueNextTick are defined
+            //^ this queues into this seperate time loop NOT *NT*
         };
     };
   
@@ -79,6 +80,6 @@ function handleTickUpdate() {
 
 #### How this works
 
-Its really simple, if you can't read code just get off this page; bascsailly checks for all buildings, checks for their health and if they are breakable next tick, it queues an action to replace the object.
+Its really simple, if you can't read code just get off this page. Bascsailly checks for all buildings, checks for their health and if they are breakable next tick, it queues an action to replace the object.
 
 Inside the `handleTickUpdate` is where we will put our preplace; This loop can also be used for many other things. 
