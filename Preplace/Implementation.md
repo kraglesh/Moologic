@@ -54,6 +54,7 @@ Inside the `handleTickUpdate` is where we will put our preplace; This loop can a
 3. Precise Timing
    * By calculating the remaining time to wait and ajusting for the time taken by `handleTickUpdate`, the loop aims to keep ticks as consistent as possible.
 
+
 NOTE: This loop is not EXACTLY 1000/9, but it will never go too fast, in testing results varied and range was between 111 <= x <= 118. This still cuts off:
 `window.pingTime - (window.pingTime - (1000/9 - x))`. `x` being interval of each tick in our seperate loop. So in summary, if your average latency is <7, theres no need to use preplace.
 
@@ -83,6 +84,7 @@ function handleTickUpdate() {
   
 }
 ```
+
 
 #### How this works
 
