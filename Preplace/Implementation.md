@@ -36,7 +36,9 @@ function spawnPlayer() {
 
 ```
 
+
 This creates a seperate loop through the use of `Promise`s and `performance.now()` to handle periodic updates with precise timing control. 
+Inside the `handleTickUpdate` is where we will put our preplace; This loop can also be used for many other things. 
 
 #### How it works
 
@@ -51,7 +53,9 @@ This creates a seperate loop through the use of `Promise`s and `performance.now(
         4. The `delay` function is used to wait for the remaining time, looping the loop at consistent intervals despite variations in processing time.
 3. Precise Timing
    * By calculating the remaining time to wait and ajusting for the time taken by `handleTickUpdate`, the loop aims to keep ticks as consistent as possible.
-  
+
+
+
 #### Preplace Psuedo
 
 ```js
@@ -83,4 +87,3 @@ function handleTickUpdate() {
 Its really simple, if you can't read code just get off this page. Bascsailly checks for all buildings, checks for their health and if they are breakable next tick, it queues an action to replace the object.
 
 `handleQueuedActions` queues all the actions that were queued for that specific tick using `queueNextTick`. Note that `queueNextTick` is specifically used for this timeloop, do not call your own `queueNextTick`.
-Inside the `handleTickUpdate` is where we will put our preplace; This loop can also be used for many other things. 
