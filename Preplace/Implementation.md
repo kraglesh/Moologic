@@ -66,7 +66,7 @@ function handleTickUpdate() {
 
     // PREPLACE:
     for (let i = 0, building; i < buildings.length; i++) {
-        const health = { building = buildings[i] };
+        const { health } = building = buildings[i];
 
         if (health <= maxPlayersDamage) { //Assume `maxPlayerDamage` is defined and inlcudes all player damage
             //^ Also assume that they hit this tick, replace next tick
