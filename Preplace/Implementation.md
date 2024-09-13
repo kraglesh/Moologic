@@ -22,7 +22,7 @@ function tickLoop() {
     handleTickUpdate();
 
     const elapsedTime = performance.now() - startTime;
-    const remainingTime = Math.max(TICK_INTERVAL_MS - elapsedTime, 0);
+    const remainingTime = Math.max(TICK_INTERVAL - elapsedTime, 0);
 
     delay(remainingTime).then(() => {
         tickLoop(); // Call the loop again after the delay
