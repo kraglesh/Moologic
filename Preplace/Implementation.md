@@ -56,16 +56,22 @@ This creates a seperate loop through the use of `Promise`s and `performance.now(
 
 ```js
 /*
- * Assume basic variables are global
+ * Assume basic variables are global & you have created a seperate time loop
  */
 function handleTickUpdate() {
     const currentTime = performance.now();
 
+    // QUEUED ACITONS:
+    handleQueuedActions(); // Handle queued actions for place (that need a sperate loop and don't need player value updates)
+
     // PREPLACE:
     for (let i = 0, building; i < buildings.length; i++) {
-        building = buildings[i];
+        const health = { building = buildings[i] };
 
-        if (building.health < 
+        if (health <= maxPlayersDamage) { //Assume `maxPlayerDamage` is defined and inlcudes all player damage
+            //^ Also assume that they hit this tick, replace next tick
+            queueNextTick(() => { replace(building) }); //Assume replace & queueNextTick are defined
+        };
     };
   
 }
