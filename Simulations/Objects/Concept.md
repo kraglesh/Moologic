@@ -1,5 +1,5 @@
 # Concept
 
-## WHat is a simulation
+The general concept behind a object simulation is where will a player end (End pos: referred to as *EP*) after colliding with object(s).
 
-[Explination](https://github.com/kraglesh/Moologic/blob/main/Simulations/README.md)
+Sounds simple? because it is simple.
