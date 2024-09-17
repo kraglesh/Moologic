@@ -49,6 +49,7 @@ To incoperate this system, we will have to implement how the player moves based 
 function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Example velocities
   let { velX, velY } = velocity;
   player.predictedX = player.predictedY = null; //make fasly to use ??
+  //doesn't matter if we remove predictedx/y because player will be sent with it previous recursive call
   let otherScale = (other.getScale ? other.getScale() : other.scale);
   if (Math.abs(velX) > 0 || Math.abs(velY) > 0) {
     if (collisionDetection(player, other, player.scale + otherScale)) {
@@ -66,17 +67,17 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
         velY += 1.5 * sin(tmpDir);
       };
       
-      return checkCollision(player, other, { velX * 0.993, velY * 0.993 });
+      return checkCollision( {...player, x: player.predictedX ?? player.x, y: player.predictedY ?? player.y }, other, { velX * 0.993, velY * 0.993 });
     } else {
       //you can either loop through buildings here, or recall the entire funciton in newtick.
       //for this example i will loop through buildings here to save space and show functionality. NOTE: this may be recource intensive.
       let buildings = buildings.filter(building => {
-        if (collisionDetection({ x: player.x + (velX * delta), y: player.y + (velY* delta) }, player.scale + otherScale) {
+        if (collisionDetection({ x: player.x + (velX * delta), y: player.y + (velY * delta) }, player.scale + otherScale) {
           return true
         };
       });
       for (let i = 0, building; i < buildings.length; i++) {
-        checkCollision({...player, x: player.x + (velX * delta), y: player.y + (velY* delta) }, building = buildings[i], { velX * 0.993, velY * 0.993 } );
+        checkCollision({...player, x: player.x + (velX * delta), y: player.y + (velY * delta) }, building = buildings[i], { velX * 0.993, velY * 0.993 } );
       };
   };
   return {...player, x: player.predictedX ?? player.x + (velX * delta), y: player.predictedY ?? player.y + (velY * delta) };
@@ -84,8 +85,11 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
 ```
 
 ## Understanding the function
-1. 
+1. First it checks the velocity of inputed parameter.
+2. Checks if the player will collide with an object without velocity.
+3. Then finds the new position the player will end up if it collides with something, and reduces velocity.
+4. Checks if `other` is a trap, stops the entire recusive loop.
+5. Checks if `other` is a spike, adds velocity based on direction `player` hits the trap
+6. recursively calls the function to decel velocity, and see if another object will collide with `player`.
+7. Finally, it returns the final player position after all recursive calls.
 
-
-
-```
