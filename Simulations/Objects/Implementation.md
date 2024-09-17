@@ -61,8 +61,8 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
       };
 
       if (other.dmg && !isTeam(other.owner, player)) { //if the object that the player is colliding into is a spike and not a team memebrs spike
-        velX += (1.5 * delta) * cos(tmpDir); //check bundle
-        velY += (1.5 * delta) * sin(tmpDir);
+        velX += 1.5 * cos(tmpDir); //check bundle
+        velY += 1.5 * sin(tmpDir);
       };
       
       return checkCollision(player, other, { velX * 0.993, velY * 0.993 });
