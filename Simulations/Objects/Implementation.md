@@ -1,8 +1,8 @@
 # Implementation
 
-Implementation is the hard part, having to incoperate a entire velocity system is laborious work; heres a way to do the kb without a vel system.
+Implementation is the hard part, having to incoperate a entire velocity system is laborious work; heres a way to do the kb **without** a velocity system.
 
-When creating a temp velocity system, to save the varaible we can either save it as a global, or recurisvly call it. 
+When creating a temp velocity system, to save the varaible we can either save it as a global, or recursively call it. 
 
 This is an example of storing the velocity globaly and then changing it during the collision call.
 ```js
