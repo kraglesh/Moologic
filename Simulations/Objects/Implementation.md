@@ -80,6 +80,7 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
   };
   return {...player, x: player.x + (velX * delta), y: player.y + (velY * delta) };
 };
+```
 
 ## Understanding the function
 1. 
