@@ -48,14 +48,29 @@ To incoperate this system, we will have to implement how the player moves based 
 
 function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Example velocities
   let { velX, velY } = velocity;
+  let otherScale = (other.getScale ? other.getScale() : other.scale);
   if (Math.abs(velX) > 0 || Math.abs(velY) > 0) {
-    if (collisionDetection(player, other, player.scale + (other.getScale ? other.getScale() : other.scale))) {
+    if (collisionDetection(player, other, player.scale + otherScale)) {
+      let tmpDir = UTILS.getDirection(player.x, player.y, other.x, other.y);
+      player.predictedX = other.x + (otherScale * cos(tmpDir));
+      player.predictedY = other.y + (otherScale * sin(tmpDir));
+      velX = velY * 0.75; //velocity loss on collision (check bundle)
+
+      if (other.ignoreCollision) { //trap
+        return player
+      };
+
+      if (other.dmg && !isTeam(other.owner, player)) { //if the object that the player is colliding into is a spike and not a team memebrs spike
+        velX += (1.5 * delta) * cos(tmpDir); //check bundle
+        velY += (1.5 * delta) * sin(tmpDir);
+      };
+      
       return checkCollision(player, other, { velX * 0.993, velY * 0.993 });
     } else {
       //you can either loop through buildings here, or recall the entire funciton in newtick.
       //for this example i will loop through buildings here to save space and show functionality. NOTE: this may be recource intensive.
       let buildings = buildings.filter(building => {
-        if (collisionDetection({ x: player.x + (velX * delta), y: player.y + (velY* delta) }, player.scale + (other.getScale ? other.getScale() + other.scale)) {
+        if (collisionDetection({ x: player.x + (velX * delta), y: player.y + (velY* delta) }, player.scale + otherScale) {
           return true
         };
       });
@@ -65,6 +80,9 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
   };
   return {...player, x: player.x + (velX * delta), y: player.y + (velY * delta) };
 };
+
+## Understanding the function
+1. 
 
 
 
