@@ -48,6 +48,7 @@ To incoperate this system, we will have to implement how the player moves based 
 
 function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Example velocities
   let { velX, velY } = velocity;
+  player.predictedX = player.predictedY = null; //make fasly to use ??
   let otherScale = (other.getScale ? other.getScale() : other.scale);
   if (Math.abs(velX) > 0 || Math.abs(velY) > 0) {
     if (collisionDetection(player, other, player.scale + otherScale)) {
@@ -78,7 +79,7 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
         checkCollision(player, building = buildings[i], { velX * 0.993, velY * 0.993 } );
       };
   };
-  return {...player, x: player.x + (velX * delta), y: player.y + (velY * delta) };
+  return {...player, x: player.predictedX ?? player.x + (velX * delta), y: player.predictedY ?? player.y + (velY * delta) };
 };
 ```
 
