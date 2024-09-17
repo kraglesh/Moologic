@@ -14,6 +14,10 @@ let player = { //Example velocities
 
 // SIMULATION:
 while(Math.abs(player.velX) > 0 || Math.abs(player.velY) > 0) {
+  // Collision checks:
+
+
+  //  
   // DECEL:
   player.velX = player.velY *= 0.993;
 }
