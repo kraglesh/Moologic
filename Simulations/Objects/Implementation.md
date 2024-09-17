@@ -37,3 +37,35 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
   return {...player, x: player.x + (velX * delta), y: player.y + (velY * delta) };
 };
 ```
+
+
+To incoperate this system, we will have to implement how the player moves based on colliding with an object. For these examples I will use the recursively called function instead of the global one, but the logic is the same for both.
+
+```js
+/*
+ * Assume basic variable usage and def
+*/
+
+function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Example velocities
+  let { velX, velY } = velocity;
+  if (Math.abs(velX) > 0 || Math.abs(velY) > 0) {
+    if (collisionDetection(player, other, player.scale + (other.getScale ? other.getScale() : other.scale))) {
+      return checkCollision(player, other, { velX * 0.993, velY * 0.993 });
+    } else {
+      //you can either loop through buildings here, or recall the entire funciton in newtick.
+      //for this example i will loop through buildings here to save space and show functionality. NOTE: this may be recource intensive.
+      let buildings = buildings.filter(building => {
+        if (collisionDetection({ x: player.x + (velX * delta), y: player.y + (velY* delta) }, player.scale + (other.getScale ? other.getScale() + other.scale)) {
+          return true
+        };
+      });
+      for (let i = 0, building; i < buildings.length; i++) {
+        checkCollision(player, building = buildings[i], { velX * 0.993, velY * 0.993 } );
+      };
+  };
+  return {...player, x: player.x + (velX * delta), y: player.y + (velY * delta) };
+};
+
+
+
+```
