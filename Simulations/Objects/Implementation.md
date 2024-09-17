@@ -7,9 +7,9 @@ When creating a temp velocity system, to save the varaible we can either save it
 This is an example of storing the velocity globaly and then changing it during the collision call.
 ```js
 // Global
-let player = {
-  velX: 0,
-  velY: 0,
+let player = { //Example velocities
+  velX: 1,
+  velY: 1,
 };
 
 // SIMULATION:
@@ -22,7 +22,7 @@ while(Math.abs(player.velX) > 0 || Math.abs(player.velY) > 0) {
 This next example shows a recursive call and returns a final position if velocities are <= 0.
 
 ```js
-function checkCollision(player, other, velocity) {
+function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Example velocities
   let { velX, velY } = velocity;
   if (Math.abs(velX) > 0 || Math.abs(velY) > 0) {
     // Collision checks:
