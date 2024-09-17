@@ -76,7 +76,7 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
         };
       });
       for (let i = 0, building; i < buildings.length; i++) {
-        checkCollision(player, building = buildings[i], { velX * 0.993, velY * 0.993 } );
+        checkCollision({...player, x: player.x + (velX * delta), y: player.y + (velY* delta) }, building = buildings[i], { velX * 0.993, velY * 0.993 } );
       };
   };
   return {...player, x: player.predictedX ?? player.x + (velX * delta), y: player.predictedY ?? player.y + (velY * delta) };
