@@ -1,0 +1,4 @@
+# Implementation of projectile simulating
+
+To simulate a projectile, we have to take the speed and how fast it moves per tick, then after it moves check if it collides with anything or it reaches its max range.
+
