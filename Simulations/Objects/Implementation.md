@@ -106,6 +106,7 @@ To calculate the velocity of an object using its final position, you can use the
    - Calculate the change in position in the x-direction (∆*x*) and the y-direction (∆*y*):
      - ∆*x* = *x*<sub>*final*</sub> - *x*<sub>*initial*</sub>
      - ∆*y* = *y*<sub>*final*</sub> - *y*<sub>*initial*</sub>
+     
 NOTE: *coord*<sub>final</sub> can be the current position and *coord*<sub>initial</sub> can be the last tick position (lastX/Y).
 
 
