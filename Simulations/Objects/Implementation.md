@@ -71,7 +71,7 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
     } else {
       //you can either loop through buildings here, or recall the entire funciton in newtick.
       //for this example i will loop through buildings here to save space and show functionality. NOTE: this may be recource intensive.
-      let buildings = buildings.filter(building => {
+      let buildings = gameObjects.filter(building => {
         if (collisionDetection({ x: player.x + (velX * delta), y: player.y + (velY * delta) }, player.scale + otherScale) {
           return true
         };
