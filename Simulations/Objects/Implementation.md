@@ -83,6 +83,8 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
   return {...player, x: player.predictedX ?? player.x + (velX * delta), y: player.predictedY ?? player.y + (velY * delta) };
 };
 ```
+Note: You can find velocity by dividing player move vector :delta:
+
 
 ## Understanding the function
 1. First it checks the velocity of inputed parameter.
