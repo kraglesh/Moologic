@@ -109,7 +109,7 @@ To calculate the velocity of an object using its final position, you can use the
 
 2. **Determine the Time Interval:**
    - Identify the time interval (*t*) over which the motion occurs.
-     - In this scenario, the `delta` or *t* is timeBetweenTick / 2 (~55.5).
+     - In this scenario, the `delta` or *t* is $\frac{500}{9}$ (timeBetweenTick / 2).
 
 3. **Calculate Velocity Components:**
    - **Velocity in the x-direction (vx):**
