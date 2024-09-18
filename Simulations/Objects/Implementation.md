@@ -108,13 +108,14 @@ To calculate the velocity of an object using its final position, you can use the
      - ∆*y* = *y*<sub>*final*</sub> - *y*<sub>*initial*</sub>
 
 2. **Determine the Time Interval:**
-   - Identify the time interval (t) over which the motion occurs.
+   - Identify the time interval (*t*) over which the motion occurs.
+     - In this scenario, the `delta` or *t* is timeBetweenTick / 2 (~55.5).
 
 3. **Calculate Velocity Components:**
    - **Velocity in the x-direction (vx):**
-     - *v*<sub>*x*</sub> = $\frac{∆*x*}{*t*}$
+     - *v*<sub>*x*</sub> = $\frac{∆x}{t}$
 
    - **Velocity in the y-direction (vy):**
-     - *v*<sub>*y*</sub> = $\frac{∆*y*}{*t*}$
+     - *v*<sub>*y*</sub> = $\frac{∆y}{t}$
 
 
