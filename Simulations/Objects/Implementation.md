@@ -84,43 +84,6 @@ function checkCollision(player, other, velocity = { velX: 1, velY: 1} ) { //Exam
 };
 ```
 
-# Finding Velocity Using Final Position
-
-To calculate the velocity of an object using its final position, you can use the following formula:
-
-## Formula
-
-1. **Determine the Change in Position:**
-   - Calculate the change in position in the x-direction (Δx) and the y-direction (Δy):
-     - ∆x = x<sub>final</sub> - x<sub>initial</sub>
-     - ∆y = y<sub>final</sub> - y<sub>initial</sub>
-
-2. **Determine the Time Interval:**
-   - Identify the time interval (t) over which the motion occurs.
-
-3. **Calculate Velocity Components:**
-   - **Velocity in the x-direction (vx):**
-     - v<sub>x</sub> = ∆x / t
-
-   - **Velocity in the y-direction (vy):**
-     - v<sub>y</sub> = ∆y / t
-
-## Example
-
-If an object moves from an initial position (2, 3) to a final position (8, 7) over a time interval of 4 seconds:
-
-1. Calculate the change in position:
-   - Δx = 8 - 2 = 6
-   - Δy = 7 - 3 = 4
-
-2. Time interval is t = 4 seconds.
-
-3. Calculate the velocity components:
-   - vx = 6 / 4 = 1.5 m/s
-   - vy = 4 / 4 = 1.0 m/s
-
-Thus, the velocity of the object is vx = 1.5 m/s and vy = 1.0 m/s.
-
 
 ## Understanding the function
 1. First it checks the velocity of inputed parameter.
@@ -130,4 +93,28 @@ Thus, the velocity of the object is vx = 1.5 m/s and vy = 1.0 m/s.
 5. Checks if `other` is a spike, adds velocity based on direction `player` hits the trap
 6. recursively calls the function to decel velocity, and see if another object will collide with `player`.
 7. Finally, it returns the final player position after all recursive calls.
+
+
+
+# Finding Velocity Using Final Position
+
+To calculate the velocity of an object using its final position, you can use the following formula:
+
+## Formula
+
+1. **Determine the Change in Position:**
+   - Calculate the change in position in the x-direction (Δx) and the y-direction (Δy):
+     - ∆*x* = *x*<sub>*final*</sub> - *x*<sub>*initial*</sub>
+     - ∆*y* = *y*<sub>*final*</sub> - *y*<sub>*initial*</sub>
+
+2. **Determine the Time Interval:**
+   - Identify the time interval (t) over which the motion occurs.
+
+3. **Calculate Velocity Components:**
+   - **Velocity in the x-direction (vx):**
+     - *v*<sub>*x*</sub> = $\frac{∆*x*}{*t*}$
+
+   - **Velocity in the y-direction (vy):**
+     - *v*<sub>*y*</sub> = $\frac{∆*y*}{*t*}$
+
 
