@@ -38,3 +38,8 @@ this.simulate = function() { //You can either call this as a seperate function o
 ```
 
 
+
+This code should be self explanitory. 
+
+NOTE: In my mod, this goes where projectiles are created clientside.
+
