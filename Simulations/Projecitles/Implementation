@@ -6,7 +6,6 @@ Then after it moves check if it collides with anything or it reaches its max ran
 On projectile creation, a ton of data is send from the server to the client. All varaibles that aren't defined are sent by server and should be saved.
 
 ```js
-
 this.simulate = function() { //You can either call this as a seperate function or a function in the projectiles class
   if (!this.active) return; //returns if the projectile is inactive
   let ticks = 0, speed = this.speed * delta, hitObj;
@@ -36,7 +35,6 @@ this.simulate = function() { //You can either call this as a seperate function o
       return { hitObj, tick }
     };
 };
-
 ```
 
 
